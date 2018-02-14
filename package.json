@@ -10,8 +10,7 @@
     "dev-server": "nodemon --watch server",
     "knex": "knex",
     "test": "jest --watchAll",
-    "start": "node server & webpack --watch",
-    "postinstall": "webpack && knex migrate:latest"
+    "start": "node server & webpack --watch" 
   },
   "useNullAsDefault": true,
   "babel": {
