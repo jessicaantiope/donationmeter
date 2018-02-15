@@ -24,4 +24,7 @@ USER STORIES
 
 **TESTING**
 
+-> THERMOMETER.JSX
+red line goes up based on form input
+
 
