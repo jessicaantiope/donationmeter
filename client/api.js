@@ -12,6 +12,15 @@ function getDonors (callback) {
     })
 }
 
+function addDonation(amount, name, callback) {
+  request
+  .post('/api')
+  .send(amount, name)
+  .end((err, res) => {
+    callback(res)
+  })
+}
+
 // function getDonor (id, callback, testConn) {
 //    request
 //    .get('/api')
@@ -23,4 +32,5 @@ function getDonors (callback) {
 module.exports = {
   getDonors: getDonors,
   getDonor:getDonor,
+  addDonation: addDonation
 }
