@@ -10,7 +10,8 @@ class Form extends React.Component {
       donation: 0
     }
 
-  this.handleChange = this.handleChange.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
+    this.handleDonationChange = this.handleDonationChange.bind(this)
 
   }
 
@@ -19,23 +20,34 @@ class Form extends React.Component {
     //addDonation(this.state.name, this.state.donation, callback to show new donation)
   }
 
-  handleChange(event) {
-    this.setState({name: event.target.value})
+  handleNameChange(event) {
+    this.setState({
+      name: event.target.value
+    })
   }
- render() {
-   return (
-    <div>
-      <p> hello form </p>
-      <form>
-      Name:
-      <input type='text' value={this.state.name} onChange={this.handleChange}/><br/>
-      Donation:
-      <input type='text' value={this.state.donation} onChange={this.handleChange}/> 
-      
-      </form>
-    </div>
-   )
- }
+
+  handleDonationChange(event) {
+    this.setState({
+      donation: event.target.value
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <p> hello form </p>
+        <form>
+          Name:
+      <input type='text' value={this.state.name} onChange={this.handleNameChange} /><br />
+      <input type='text' value={this.state.name} onChange={this.handleNameChange} /><br />
+          Donation:
+      <input type='number' value={this.state.donation} onChange={this.handleDonationChange} />
+      <input type='submit' value='Submit' />
+
+        </form>
+      </div>
+    )
+  }
 
 
 }
