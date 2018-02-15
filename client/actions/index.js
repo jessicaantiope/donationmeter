@@ -6,7 +6,6 @@ export const donationMade = (amount) => {
   return {
     type: DONATION_MADE,
     amount: amount
-    // yHeight: yHeight
   }
 }
 
@@ -15,6 +14,7 @@ export function makeDonation (amount) {
     dispatch(donationMade(amount))
   }
 }
+
 
 // export function fetchPosts (subreddit) {
 //   return (dispatch) => {

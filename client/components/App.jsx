@@ -44,6 +44,7 @@ class App extends React.Component {
         <p>hello</p>
         <button onClick={this.displayForm}>Button</button>
         {this.state.showForm && <Form />}
+        <Thermometer />
       </div>
     )
   }
