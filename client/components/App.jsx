@@ -4,17 +4,8 @@ import Form from './Form'
 import Leaderboard from './Leaderboard'
 import Total from './Total'
 import Thermometer from './Thermometer'
-
-import donorApi from '../api.js'
-
-// getDonor(1, log)
-
-// function log(data){
-//   console.log(data)
-// }
-
-
-
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import DonorTable from './DonorTable'
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -30,22 +21,21 @@ class App extends React.Component {
   }
 
 
-
-  // componentDidMount(){
-  //   donorApi.getDonors(function(err, data){
-  //     console.log(data)
-  //   })
-  // }
-
-
   render() {
     return (
+      <Router>
       <div className='app'>
         <p>hello</p>
         <button onClick={this.displayForm}>Button</button>
         {this.state.showForm && <Form />}
         <Thermometer />
+      <div>
+        <Route exact path = "/DonorTable" component={DonorTable} />
+        <a href='/DonorTable'>DonorTable</a>
       </div>
+
+      </div>
+    </Router>
     )
   }
 }
