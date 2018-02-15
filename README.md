@@ -25,6 +25,7 @@ USER STORIES
 **TESTING**
 
 -> THERMOMETER.JSX
-red line goes up based on form input
+-red line goes up based on form input
+-props.amount returns a number not a string (console.log(props.amount)) / e.target.value is converted to number at input
 
 
