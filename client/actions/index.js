@@ -1,28 +1,19 @@
-// import request from 'superagent'
+import request from 'superagent'
 
-// export const SHOW_ERROR = 'SHOW_ERROR'
-// export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-// export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const DONATION_MADE = 'DONATION_MADE'
 
-// export const requestPosts = () => {
-//   return {
-//     type: REQUEST_POSTS
-//   }
-// }
+export const donationMade = (amount) => {
+  return {
+    type: DONATION_MADE
+    amount: amount
+  }
+}
 
-// export const receivePosts = (posts) => {
-//   return {
-//     type: RECEIVE_POSTS,
-//     posts: posts.map(post => post.data)
-//   }
-// }
-
-// export const showError = (errorMessage) => {
-//   return {
-//     type: SHOW_ERROR,
-//     errorMessage: errorMessage
-//   }
-// }
+export function makeDonation (amount) {
+  return (dispatch) => {
+    dispatch(donationMade(amount))
+  }
+}
 
 // export function fetchPosts (subreddit) {
 //   return (dispatch) => {
