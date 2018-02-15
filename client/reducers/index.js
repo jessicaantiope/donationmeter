@@ -1,11 +1,7 @@
 import {combineReducers} from 'redux'
 
-// import errorMessage from './error-message'
-// import subreddits from './subreddits'
-// import waiting from './waiting'
+import amount from './amount'
 
-// export default combineReducers({
-//   errorMessage,
-//   subreddits,
-//   waiting
-// })
+export default combineReducers({
+  amount
+})

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Form from './Form'
 import Leaderboard from './Leaderboard'
 import Total from './Total'
@@ -41,9 +42,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <p>hello</p>
-
         <button onClick={this.displayForm}>Button</button>
-
         {this.state.showForm && <Form />}
       </div>
     )
