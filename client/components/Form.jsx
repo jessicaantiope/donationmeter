@@ -1,5 +1,6 @@
 import React from 'react'
 //import {addDonation} from '../api'
+import {makeDonation} from '../actions/index'
 
 class Form extends React.Component {
   constructor(props) {
@@ -39,10 +40,9 @@ class Form extends React.Component {
         <form>
           Name:
       <input type='text' value={this.state.name} onChange={this.handleNameChange} /><br />
-      <input type='text' value={this.state.name} onChange={this.handleNameChange} /><br />
           Donation:
       <input type='number' value={this.state.donation} onChange={this.handleDonationChange} />
-      <input type='submit' value='Submit' />
+      <input type='submit' onClick={() => makeDonation('hello')} value='Submit' />
 
         </form>
       </div>
