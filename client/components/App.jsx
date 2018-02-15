@@ -30,11 +30,10 @@ class App extends React.Component {
         <button onClick={this.displayForm}>Button</button>
         {this.state.showForm && <Form />}
         <Thermometer />
-      <div>
-        <Route path="/DonorTable" component={DonorTable} />
-        <a href='/#/DonorTable'>DonorTable</a>
-      </div>
-
+        <div>
+          <Route path="/DonorTable" component={DonorTable} />
+          <a href='/#/DonorTable'>DonorTable</a>
+        </div>
       </div>
     </Router>
     )
