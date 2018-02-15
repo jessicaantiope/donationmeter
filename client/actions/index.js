@@ -6,7 +6,7 @@ export const donationMade = (amount) => {
   return {
     type: DONATION_MADE,
     amount: amount
-    yHeight: yHeight
+    // yHeight: yHeight
   }
 }
 
