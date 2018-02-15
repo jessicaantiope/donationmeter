@@ -3,8 +3,8 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers
+  getDonor: getDonor,
+  getDonors: getDonors
 }
 
 function getDonors (testConn) {
@@ -12,7 +12,7 @@ function getDonors (testConn) {
   return conn('users').select()
 }
 
-function getDonors (id, testConn) {
+function getDonor (id, testConn) {
   const conn = testConn || connection
   return conn('users').where('id', id)
 }
