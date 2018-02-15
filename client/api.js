@@ -22,5 +22,5 @@ function getDonors (callback) {
 
 module.exports = {
   getDonors: getDonors,
-  getDonor:getDonor,
+  // getDonor:getDonor,
 }
