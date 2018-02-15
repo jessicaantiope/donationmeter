@@ -11,45 +11,37 @@ class Form extends React.Component {
       donation: 0
     }
 
-    this.handleNameChange = this.handleNameChange.bind(this)
-    this.handleDonationChange = this.handleDonationChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
-  addNewDonation(event) {
+  handleChange(event) {
+    let newState = this.state
+    newState[event.target.name] = event.target.value
+    this.setState(newState)
+  }
+
+  handleSubmit(event) {
     event.preventDefault()
-    //addDonation(this.state.name, this.state.donation, callback to show new donation)
-  }
-
-  handleNameChange(event) {
-    this.setState({
-      name: event.target.value
-    })
-  }
-
-  handleDonationChange(event) {
-    this.setState({
-      donation: event.target.value
-    })
+    submitdetails = this.state
+    this.props.submitCallback(submitdetails)
   }
 
   render() {
     return (
       <div>
-        <p> hello form </p>
+        <h5>Please input your donation details:</h5>
         <form>
-          Name:
-      <input type='text' value={this.state.name} onChange={this.handleNameChange} /><br />
-          Donation:
-      <input type='number' value={this.state.donation} onChange={this.handleDonationChange} />
-      <input type='submit' onClick={() => makeDonation('hello')} value='Submit' />
-
+          Name: <br/>
+          <input type='text' name='name' value={this.state.name} onChange={this.handleChange} /><br/>
+          Donation: <br/>
+          <input type='number' name='donation' value={this.state.donation} onChange={this.handleChange} /><br/>
+          <input type='submit' onClick={this.handleSubmit} value='Submit' />
         </form>
       </div>
     )
   }
-
-
 }
 
 export default Form
