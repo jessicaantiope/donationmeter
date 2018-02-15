@@ -1,5 +1,11 @@
-var getDonor = require('../../db.js').getDonor
+var getDonors = require('../../db.js').getDonors
 
-getDonor(1).then((data) => {
-  console.log(data)
+var Donors = getDonors().then((data) => {
+  log(data)
 })
+
+console.log(Donors)
+
+function log(data){
+  console.log(data)
+}
