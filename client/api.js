@@ -25,6 +25,7 @@ function getData(){
     getDonors(function(err, data){
       console.log(data)
   })
+}
 
 function makeDonation(amount, name, callback) {
   request
@@ -41,4 +42,3 @@ module.exports = {
   // getDonor:getDonor,
 
 }
-

@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
   db.makeDonation(newDonation)
   .then((donationId) => {
     res.json({donationIds: {id: donationIds[0]}})
-  } 
+  })
 })
-
 module.exports = router
