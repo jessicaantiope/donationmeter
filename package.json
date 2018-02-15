@@ -5,7 +5,7 @@
   "repository": "https://github.com/kahu-2018/donationmeter.git",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch server & webpack --watch",
+    "dev": "nodemon --watch server/index.js & webpack --watch",
     "dev-client": "webpack-dev-server --hot --inline --content-base public",
     "dev-server": "nodemon --watch server",
     "knex": "knex",
@@ -28,6 +28,7 @@
     "body-parser": "^1.18.2",
     "bundle": "^2.1.0",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.2",
     "jest": "^22.3.0",
     "knex": "^0.14.3",

@@ -9,10 +9,10 @@ module.exports = {
 
 function getDonors (testConn) {
   const conn = testConn || connection
-  return conn('users').select()
+  return conn('donors').select()
 }
 
 function getDonor (id, testConn) {
   const conn = testConn || connection
-  return conn('users').where('id', id)
+  return conn('donors').where('id', id)
 }
