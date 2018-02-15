@@ -17,5 +17,12 @@ router.get('/:id', (req, res) => {
   })
 })
 
+router.post('/', (req, res) => {
+  const newDonation = req.body
+  db.makeDonation(newDonation)
+  .then((donationId) => {
+    res.json({donationIds: {id: donationIds[0]}})
+  } 
+})
 
 module.exports = router
