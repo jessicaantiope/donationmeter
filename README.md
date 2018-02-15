@@ -27,5 +27,6 @@ USER STORIES
 -> THERMOMETER.JSX
 -red line goes up based on form input
 -props.amount returns a number not a string (console.log(props.amount)) / e.target.value is converted to number at input
+-thermometer increases appropriately after 2/multiple donations in a row
 
 
