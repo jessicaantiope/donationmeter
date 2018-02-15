@@ -1,23 +1,27 @@
 import React from 'react'
+import Form from './Form'
+import Leaderboard from './Leaderboard'
+import Total from './Total'
+import Thermometer from './Thermometer'
 
-const App = () => (
-  <div className='app'>
-  hello
-  </div>
-)
 
-// import ErrorMessage from './ErrorMessage'
-// import LoadSubreddit from './LoadSubreddit'
-// import SubredditList from './SubredditList'
-// import WaitIndicator from './WaitIndicator'
 
-// const App = () => (
-//   <div className='app'>
-//     <ErrorMessage />
-//     <LoadSubreddit />
-//     <WaitIndicator />
-//     <SubredditList />
-//   </div>
-// )
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showForm: false
+    }
+  }
+  render() {
+    return (
+      <div className='app'>
+        <p>hello</p>
+      </div>
+    )
+  }
+}
 
 export default App
