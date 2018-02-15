@@ -21,7 +21,14 @@ class App extends React.Component {
     this.state = {
       showForm: false
     }
+    this.displayForm = this.displayForm.bind(this)
   }
+
+  displayForm(event) {
+    this.setState({ showForm: true })
+  }
+
+
 
   // componentDidMount(){
   //   donorApi.getDonors(function(err, data){
@@ -29,10 +36,15 @@ class App extends React.Component {
   //   })
   // }
 
+
   render() {
     return (
       <div className='app'>
         <p>hello</p>
+
+        <button onClick={this.displayForm}>Button</button>
+
+        {this.state.showForm && <Form />}
       </div>
     )
   }
