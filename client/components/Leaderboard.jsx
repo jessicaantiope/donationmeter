@@ -1,2 +1,5 @@
+var getDonor = require('../../db.js').getDonor
 
-// import React from 'react'
+getDonor(1).then((data) => {
+  console.log(data)
+})
