@@ -20,10 +20,25 @@ function getDonors (callback) {
 //    })
 // }
 
+
 function getData(){
     getDonors(function(err, data){
       console.log(data)
   })
+
+function makeDonation(amount, name, callback) {
+  request
+  .post('/api')
+  .send(amount, name)
+  .end((err, res) => {
+    callback(res)
+  })
 }
 
-module.exports = getDonors
+module.exports = {
+  getDonors: getDonors,
+  makeDonation: makeDonation
+  // getDonor:getDonor,
+
+}
+
