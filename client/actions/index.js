@@ -4,8 +4,9 @@ export const DONATION_MADE = 'DONATION_MADE'
 
 export const donationMade = (amount) => {
   return {
-    type: DONATION_MADE
+    type: DONATION_MADE,
     amount: amount
+    yHeight: yHeight
   }
 }
 
