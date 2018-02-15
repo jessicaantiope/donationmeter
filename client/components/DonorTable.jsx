@@ -8,21 +8,21 @@ class DonorTable extends React.Component {
     this.state = {
       Donorlist: []
     }
-    this.mapData = this.mapData.bind(this)
   }
 
- mapData(data) {
-   console.log(data)
- }
- componentDidMount(){
-  getDonors(() => mapData(data))
- }
+  componentDidMount() {
+    getDonors((err, data) => {
+      console.log(err)
+      console.log(data)
+    })
+  }
+
   // componentDidMount() {
-  //   fetch('http://localhost:3000/apkubfki')
+  //   fetch('http://localhost:3000/api')
   //   .then(results => {
   //     console.log(results)
   //     return results.json()
-  //   }).then(data => {
+  //   }).then(err, data => {
   //     let DonorList = data.results.map((donor) => {
   //       return(
   //         <li>{donor.name} + ': ' {donor.amount}</li>

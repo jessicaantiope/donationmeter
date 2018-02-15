@@ -3,7 +3,7 @@ import request from 'superagent'
 function getDonors (callback) {
   request
     .get('/api')
-    .end((err, res) => {
+    .then((err, data) => {
       if(err) {
         callback(err)
       } else {
@@ -26,6 +26,4 @@ function getData(){
   })
 }
 
-module.exports = {
-  getDonors: getDonors
-}
+module.exports = getDonors
