@@ -1,4 +1,4 @@
- var request= require('superagent')
+import request from 'superagent'
 
 function getDonors (callback) {
   request

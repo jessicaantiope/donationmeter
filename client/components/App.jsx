@@ -6,6 +6,7 @@ import Total from './Total'
 import Thermometer from './Thermometer'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import DonorTable from './DonorTable'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -30,8 +31,8 @@ class App extends React.Component {
         {this.state.showForm && <Form />}
         <Thermometer />
       <div>
-        <Route exact path = "/DonorTable" component={DonorTable} />
-        <a href='/DonorTable'>DonorTable</a>
+        <Route path="/DonorTable" component={DonorTable} />
+        <a href='/#/DonorTable'>DonorTable</a>
       </div>
 
       </div>
