@@ -14,18 +14,21 @@ class DonorTable extends React.Component {
     getDonors((data, err) => {
       console.log(data.body)
       console.log('herllo')
-      this.setState((data) =>{
-        return {Donorlist: data.body}
-      })
+      this.setState(
+       {Donorlist: data.body}
+       )
       console.log(this.state.Donorlist)
     })
   }
 
   render() {
   return (
-    <p>
-      {this.state.Donorlist}
-    </p>
+    <ul>
+      {this.state.Donorlist.map(donor => {
+        return (<li>{donor.name}: {donor.amount}$</li>)
+      })
+    }
+    </ul>
   )
  }
 }
