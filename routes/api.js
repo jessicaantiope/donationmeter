@@ -6,7 +6,16 @@ const router = express.Router()
 
 
 router.get('/', (req, res) => {
-  res.send('I\'m listening')
+  db.getDonors().then((data) => {
+      res.json(data)
+  })
 })
+
+router.get('/:id', (req, res) => {
+  db.getDonor(req.params.id).then((data) => {
+    res.json(data)
+  })
+})
+
 
 module.exports = router
