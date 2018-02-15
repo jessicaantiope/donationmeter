@@ -5,7 +5,7 @@ const db = require('../db')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getUsers()
+  db.getDonors()
     .then(donors => {
       res.render('index', { donors: donors })
     })
