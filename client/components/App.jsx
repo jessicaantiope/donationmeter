@@ -34,6 +34,7 @@ class App extends React.Component {
           <Route path="/DonorTable" component={DonorTable} />
           <a href='/#/DonorTable'>DonorTable</a>
         </div>
+          <Leaderboard />
       </div>
     </Router>
     )
