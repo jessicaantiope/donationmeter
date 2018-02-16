@@ -14,14 +14,21 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      showForm: false
+      showForm: false,
+      showDonors: false
     }
     this.displayForm = this.displayForm.bind(this)
     this.handleDonation = this.handleDonation.bind(this)
+    this.displayDonors = this.displayDonors.bind(this)
+
   }
 
   displayForm(event) {
     this.setState({ showForm: true })
+  }
+
+  displayDonors(event) {
+    this.setState({ showDonors: true })
   }
 
   handleDonation(donationDetails) {
@@ -36,18 +43,12 @@ class App extends React.Component {
         <div>
           <div className='app'>
             <h1 className='title is-1'>hello</h1>
-            <button onClick={this.displayForm}>Button</button>
+            <button onClick={this.displayForm}>Donate</button>
             {this.state.showForm && <Form />}
             <Thermometer />
-            <DonorTable />
-            <div>
-              <Route path="/DonorTable" component={DonorTable} />
-              <a href='/#/DonorTable'>DonorTable</a>
-
-            </div>
-          </div>
-          <div>
             <Leaderboard />
+            <button onClick={this.displayDonors}>See Donors</button>
+            {this.state.showDonors && <DonorTable />}
           </div>
         </div>
       </Router>
