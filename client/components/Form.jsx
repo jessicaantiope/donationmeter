@@ -1,6 +1,7 @@
 import React from 'react'
 //import {addDonation} from '../api'
 import {makeDonation} from '../actions/index'
+import {connect} from 'react-redux'
 
 class Form extends React.Component {
   constructor(props) {
@@ -20,13 +21,15 @@ class Form extends React.Component {
     let newState = this.state
     newState[event.target.name] = event.target.value
     this.setState(newState)
-  }
+  } 
 
   handleSubmit(event) {
     event.preventDefault()
-    submitdetails = this.state
-    this.props.submitCallback(submitdetails)
-  }
+    let donationDetails = this.state
+    this.props.dispatch(makeDonation(donationDetails)
+    )}
+
+
 
   render() {
     return (
@@ -44,4 +47,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form
+export default connect()(Form)

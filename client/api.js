@@ -27,18 +27,19 @@ function getData(){
   })
 }
 
-function makeDonation(amount, name, callback) {
-  request
-  .post('/api')
-  .send(amount, name)
-  .end((err, res) => {
-    callback(res)
-  })
+function makeDonation(amount, name) {
+  console.log('test')
+  return (dispatch) => {
+    request
+    .post('/api')
+    .send(amount, name)
+    .end((err, res) => {
+      console.log(err.body)
+    })
+  }
 }
 
 module.exports = {
   getDonors: getDonors,
   makeDonation: makeDonation
-  // getDonor:getDonor,
-
 }

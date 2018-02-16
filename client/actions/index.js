@@ -2,30 +2,24 @@ import request from 'superagent'
 
 export const DONATION_MADE = 'DONATION_MADE'
 
-export const donationMade = (amount) => {
+export const donationMade = (donationDetails) => {
   return {
     type: DONATION_MADE,
-    amount: amount
+    amount: donationDetails.amount
   }
 }
 
-export function makeDonation (amount) {
+export function makeDonation(donationDetails) {
   return (dispatch) => {
-    dispatch(donationMade(amount))
+    console.log(donationDetails)
+    return request
+      .post('/api')
+      .send(donationDetails)
+      .then(res => {
+        dispatch(donationMade(donationDetails))
+      .catch(err => {
+        dispatch(err.message)
+      })
+      })
   }
 }
-
-
-// export function fetchPosts (subreddit) {
-//   return (dispatch) => {
-//     dispatch(requestPosts())
-//     return request
-//       .get(`/api/v1/reddit/subreddit/${subreddit}`)
-//       .then(res => {
-//         dispatch(receivePosts(res.body))
-//       })
-//       .catch(err => {
-//         dispatch(showError(err.message))
-//       })
-//   }
-// }
