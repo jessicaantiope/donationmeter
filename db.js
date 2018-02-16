@@ -4,7 +4,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getDonor: getDonor,
-  getDonors: getDonors
+  getDonors: getDonors,
+  makeDonation: makeDonation
 }
 
 function getDonors (testConn) {
@@ -15,4 +16,11 @@ function getDonors (testConn) {
 function getDonor (id, testConn) {
   const conn = testConn || connection
   return conn('donors').where('id', id)
+}
+
+function makeDonation (newDonation, testConn){
+  const conn = testConn || connection
+  // return knex('donors').insert({name: newDonation.name}, {amount: newDonation.amount}).returning('*').toString()
+  
+  return conn('donors').insert([{name: newDonation.name}, {amount: newDonation.amount}])
 }
