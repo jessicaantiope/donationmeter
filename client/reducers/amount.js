@@ -5,7 +5,7 @@ import {
 const amount = (totalAmount = 100, action) => {
  switch (action.type) {
    case DONATION_MADE:
-     return totalAmount + action.amount
+     return totalAmount + Number(action.amount)
 
    default:
      return totalAmount
