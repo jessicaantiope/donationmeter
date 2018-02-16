@@ -1,5 +1,6 @@
 import request from 'superagent'
 
+
 function getDonors (callback) {
   request
     .get('/api')
@@ -12,20 +13,24 @@ function getDonors (callback) {
     })
 }
 
-// function getDonor (id, callback, testConn) {
-//    request
-//    .get('/api')
-//    .end((res) => {
-//      callback('donors').where('id', id)
-//    })
-// }
 
-
-function getData(){
-    getDonors(function(err, data){
-      console.log(data)
-  })
+function getTotal (total) {
+  return {
+    type: 'RECEIVE_TOTAL',
+    total
+  }
 }
+
+function getTotal(callback){
+  return dispatch => {
+    getDonors((data, err) => {
+      dispatch(getTotal(data.body.reduce((total, donor) => total + Number(donor.amount), 0)))
+    })
+  }
+}
+// getTotal()
+
+console.log('total3', total)
 
 function makeDonation(amount, name, callback) {
   request
@@ -38,7 +43,6 @@ function makeDonation(amount, name, callback) {
 
 module.exports = {
   getDonors: getDonors,
-  makeDonation: makeDonation
-  // getDonor:getDonor,
-
+  makeDonation: makeDonation,
+  getTotal: getTotal
 }
