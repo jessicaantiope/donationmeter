@@ -12,14 +12,23 @@ function getDonors (callback) {
     })
 }
 
-// function getDonor (id, callback, testConn) {
-//    request
-//    .get('/api')
-//    .end((res) => {
-//      callback('donors').where('id', id)
-//    })
-// }
+function receiveTotal (total) {
+  console.log({total});
+  return {
+    type: 'RECEIVE_CURRENT_TOTAL',
+    total
+  }
+}
 
+
+export function getTotal(){
+  return dispatch => {
+    console.log("getTotal");
+    getDonors((data, err) => {
+      dispatch(receiveTotal(data.body.reduce((total, donor) => total + Number(donor.amount), 0)))
+    })
+  }
+}
 
 function getData(){
     getDonors(function(err, data){
@@ -41,5 +50,6 @@ function makeDonation(amount, name) {
 
 module.exports = {
   getDonors: getDonors,
-  makeDonation: makeDonation
+  makeDonation: makeDonation,
+  getTotal
 }

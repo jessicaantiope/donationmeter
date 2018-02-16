@@ -6,8 +6,9 @@ import Total from './Total'
 import Thermometer from './Thermometer'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import DonorTable from './DonorTable'
-import {makeDonation} from '../api'
+import {makeDonation, getTotal} from '../api'
 import { connect } from 'react-redux'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -26,6 +27,9 @@ class App extends React.Component {
   displayForm(event) {
     this.setState({ showForm: true })
   }
+  componentDidMount() {
+    this.props.dispatch(getTotal())
+  }
 
   displayDonors(event) {
     this.setState({ showDonors: true })
@@ -42,7 +46,7 @@ class App extends React.Component {
       <Router>
         <div>
           <div className='app'>
-            <h1 className='title is-1'>hello</h1>
+            <h1 className='title is-1'>Dough-nation</h1>
             <button onClick={this.displayForm}>Donate</button>
             {this.state.showForm && <Form />}
             <Thermometer />
