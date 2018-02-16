@@ -46,7 +46,7 @@ class App extends React.Component {
       <Router>
         <div>
           <div className='app'>
-            <h1 className='title is-1'>hello</h1>
+            <h1 className='title is-1'>Dough-nation</h1>
             <button onClick={this.displayForm}>Donate</button>
             {this.state.showForm && <Form />}
             <Thermometer />
