@@ -25,18 +25,22 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-      <div className='app'>
-        <p>hello</p>
-        <button onClick={this.displayForm}>Button</button>
-        {this.state.showForm && <Form />}
-        <Thermometer />
-        <div>
-          <Route path="/DonorTable" component={DonorTable} />
-          <a href='/#/DonorTable'>DonorTable</a>
+        <div className='app'>
+          <h1 className='title is-1'>hello</h1>
+          <button onClick={this.displayForm}>Button</button>
+          {this.state.showForm && <Form />}
+          <Thermometer />
+          <DonorTable />
+          <div>
+            <Route path="/DonorTable" component={DonorTable} />
+            <a href='/#/DonorTable'>DonorTable</a>
+
+          </div>
         </div>
+        <div>
           <Leaderboard />
-      </div>
-    </Router>
+        </div>
+      </Router>
     )
   }
 }
