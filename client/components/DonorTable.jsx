@@ -25,7 +25,7 @@ class DonorTable extends React.Component {
   return (
     <ul>
       {this.state.Donorlist.map(donor => {
-        return (<li>{donor.name}: {donor.amount}$</li>)
+        return (<li>{donor.name}: ${donor.amount}</li>)
       })
     }
     </ul>
