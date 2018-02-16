@@ -29,4 +29,14 @@ USER STORIES
 -props.amount returns a number not a string (console.log(props.amount)) / e.target.value is converted to number at input
 -thermometer increases appropriately after 2/multiple donations in a row
 
+-> ADD DONATION
+- new donation added to donor list
+- total updated upon donation
+
+-> DONOR TABLE
+- on click, see all donors
+
+-> FORM DISPLAY
+- on button click, form displayed
+
 
