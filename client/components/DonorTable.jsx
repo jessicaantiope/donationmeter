@@ -1,5 +1,5 @@
 import React from 'react'
-import {getDonors} from '../api'
+import {getDonors} from '../utils/api'
 
 class DonorTable extends React.Component {
   constructor(props) {

@@ -1,17 +1,15 @@
 import React from 'react'
-
-import LoginForm from './LoginForm'
 import Form from './Form'
 import Leaderboard from './Leaderboard'
 import Total from './Total'
 import Thermometer from './Thermometer'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import DonorTable from './DonorTable'
-import {makeDonation, getTotal} from '../utils/api'
+import {makeDonation, getTotal} from '../api'
 import { connect } from 'react-redux'
 
 
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props)
 
@@ -46,12 +44,16 @@ class App extends React.Component {
     return (
         <div>
           <div className='app'>
-            <h1 className='title is-1'>Dough-nation</h1>
-            {this.state.isAuthenticated ? <Home /> : <LoginForm />}
+            <button onClick={this.displayForm}>Donate</button>
+            {this.state.showForm && <Form />}
+            <Thermometer />
+            <Leaderboard />
+            <button onClick={this.displayDonors}>See Donors</button>
+            {this.state.showDonors && <DonorTable />}
           </div>
         </div>
     )
   }
 }
 
-export default connect()(App)
+export default connect()(Home)

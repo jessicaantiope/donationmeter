@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {getDonors} from '../api'
+import {getDonors} from '../utils/api'
 
 class Leaderboard extends React.Component {
   constructor(props) {
